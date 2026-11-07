@@ -1,0 +1,28 @@
+name: Publish browser release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out release files
+        uses: actions/checkout@v4
+
+      - name: Publish browser packages
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          gh release create "$RELEASE_TAG" \
+            packages/krillion-spell-helper-chrome-store.zip \
+            packages/krillion-spell-helper-firefox.xpi \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "Krillion Spelling Helper $RELEASE_TAG" \
+            --notes "Browser packages for the Chrome and Firefox versions."
