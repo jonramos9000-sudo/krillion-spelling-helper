@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Try Krillion Spelling Helper</title>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;background:repeating-linear-gradient(135deg,#ffffff03 0 1px,transparent 1px 7px),radial-gradient(circle at 80% 5%,#30383b 0,#1a1e20 38%,#111416 85%);color:#e8edeb;font:16px/1.6 system-ui,sans-serif}
+  header{max-width:1080px;margin:auto;padding:30px 28px;border-bottom:1px solid #3c4547;display:flex;align-items:center;justify-content:space-between}
+  .brand{font-size:21px;font-weight:750;letter-spacing:-1px}.brand span{display:inline-grid;place-items:center;margin-right:10px;background:#242d2f;color:#aee5db;border:1px solid #57696a;width:32px;height:32px;border-radius:10px;font-size:19px}
+  .pill{font-size:12px;padding:5px 12px;border:1px solid #495456;border-radius:20px;color:#b9cbc7}
+  main{max-width:720px;margin:74px auto;padding:0 28px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;color:#a8c6bf}
+  h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(38px,6vw,57px);line-height:1.12;letter-spacing:-1.8px;margin:16px 0 20px}
+  p{color:#aab6b4;max-width:470px}
+  .card{padding:30px;background:linear-gradient(145deg,#252b2d,#1b1f21);border:1px solid #424b4d;border-radius:20px;margin:32px 0 22px;box-shadow:0 20px 50px #0005,0 1px 0 #ffffff12 inset}
+  label{display:block;font-size:13px;font-weight:650;margin-bottom:10px}
+  input,textarea{font:18px/1.5 system-ui;width:100%;color:#e8edeb;padding:15px 17px;border:1px solid #566163;border-radius:10px;background:#14191b;outline:none;caret-color:#a5e2d7}
+  input::placeholder,textarea::placeholder{color:#899795}input:focus,textarea:focus{border-color:#91d8ca;box-shadow:0 0 0 3px #91d8ca26}
+  small{display:block;margin-top:10px;color:#b0bcba;font-size:12px}.examples{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.examples span{font-size:12px;padding:5px 11px;background:#303a3b;border:1px solid #465253;border-radius:7px;color:#c3dad5}
+  footer{margin-top:32px;font-size:12px;color:#a7b5b1}.second{margin-top:35px}textarea{height:90px;resize:vertical}
+</style>
+<header><div class="brand"><span>k</span>krillion</div><div class="pill">Spelling helper · Demo</div></header>
+<main><div class="eyebrow">A LITTLE HELP FINDING THE WORD</div><h1>You know the answer.<br>Let’s find the spelling.</h1><p>Start typing the way it sounds. Pick the word you mean from the suggestions below.</p>
+<div class="card"><label for="answer">Your answer</label><input id="answer" type="text" placeholder="Try typing “elefant”" spellcheck="false" autocomplete="off"><small>Click a word, or use ↑ ↓ and Enter. Esc closes the list.</small><div class="examples"><span>elefant → elephant</span><span>definately → definitely</span><span>becaus → because</span></div><div class="second"><label for="sentence">Try it in a sentence</label><textarea id="sentence" placeholder="I saw an elefant" spellcheck="false"></textarea></div></div>
+<footer>English dictionary · Works offline · Nothing you type is sent anywhere<br>This demo activates the helper automatically. On websites, click the extension icon.</footer></main>
+<script src="words.js"></script><script src="engine.js"></script><script src="content.js"></script>
+</html>
